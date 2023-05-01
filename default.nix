@@ -14,4 +14,9 @@ pkgs.stdenv.mkDerivation rec {
   buildInputs = with pkgs; [
     glib
   ];
+
+  postFixup = ''
+    date +%C
+    $out/bin/g-date-time-format-test
+  '';
 }
