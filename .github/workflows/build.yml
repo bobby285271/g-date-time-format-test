@@ -6,5 +6,8 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - run: date +%C
+      - uses: cachix/install-nix-action@v17
+      - uses: actions/checkout@v2
       - run: nix-build
+      - run: date +%C
+      - run: ./result/bin/g-date-time-format-test
