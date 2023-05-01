@@ -1,0 +1,10 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - run: date +%C
+      - run: nix-build
