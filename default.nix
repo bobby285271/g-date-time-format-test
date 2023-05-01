@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/a1678414b8a2124097b2e57a4296021224c44bf6.tar.gz") { } }:
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/3fe874d773588e2fa6b678e8bb5bb8b127e75e68.tar.gz") { } }:
 
 pkgs.stdenv.mkDerivation rec {
   name = "g-date-time-format-test";
