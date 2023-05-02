@@ -11,5 +11,5 @@ jobs:
       - run: nix-build
       - run: date +%C
       - run: ./result/bin/g-date-time-format-test
-      # https://github.com/NixOS/nixpkgs/commits/3fe874d773588e2fa6b678e8bb5bb8b127e75e68
-      - run: nix-build -A tracker https://github.com/NixOS/nixpkgs/archive/3fe874d773588e2fa6b678e8bb5bb8b127e75e68.tar.gz
+      # https://github.com/NixOS/nixpkgs/commits/39bb52c2e85a9fb3bda21b31d175f7c0a9add140
+      - run: nix-build -A tracker https://github.com/NixOS/nixpkgs/archive/39bb52c2e85a9fb3bda21b31d175f7c0a9add140.tar.gz
