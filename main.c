@@ -1,15 +1,22 @@
-#include <glib.h>
+#include <stdio.h>
+#include <time.h>
 
 int
 main (int argc, char *argv[])
 {
-  GDateTime *dt;
-  gchar *str;
+	char buf[100];
+	/* 0101-01-01T01:01:01Z */
+	time_t t = -58979923200;
+	struct tm tm;
 
-  dt = g_date_time_new_from_unix_utc (1682944459);
-  str = g_date_time_format (dt, "%C%y-%m-%dT%TZ");
-  g_print ("Date: %s\n", str);
-  g_free (str);
-
-  return 0;
+        gmtime_r (&t, &tm);
+	strftime (buf, sizeof buf, "%C%y", &tm);
+	printf ("Should be '0101': %s\n", buf);
+	strftime (buf, sizeof buf, "%Y", &tm);
+	printf ("Should be '0101': %s\n", buf);
+	strftime (buf, sizeof buf, "%2C%y", &tm);
+	printf ("Should be '0101': %s\n", buf);
+	strftime (buf, sizeof buf, "%4Y", &tm);
+	printf ("Should be '0101': %s\n", buf);
+	return 0;
 }
